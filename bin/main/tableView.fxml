@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1200.0" styleClass="background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.2845691382765531" layoutX="257.0" layoutY="137.0" prefHeight="606.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane maxWidth="280.0" minHeight="0.0" minWidth="0.0" prefWidth="280.0">
+               <children>
+                  <SplitPane dividerPositions="0.24748743718592964" layoutX="108.0" layoutY="220.0" orientation="VERTICAL" prefHeight="718.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane maxHeight="180.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" styleClass="global">
+                           <children>
+                              <Label layoutX="18.0" layoutY="61.0" text="Name" textFill="WHITE" />
+                              <Label layoutX="19.0" layoutY="101.0" text="Type" textFill="WHITE" />
+                              <ComboBox id="cbType" cache="true" depthTest="DISABLE" layoutX="68.0" layoutY="96.0" prefWidth="167.0" />
+                              <TextField id="filterName" layoutX="68.0" layoutY="57.0" />
+                              <Text id="tilte" fill="WHITE" layoutX="63.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Global Filters" wrappingWidth="242.01394877989213">
+                                 <font>
+                                    <Font name="STHeiti" size="23.0" />
+                                 </font>
+                              </Text>
+                              <Button id="btnLaunchFilters" defaultButton="true" layoutX="165.0" layoutY="142.0" mnemonicParsing="false" text="Search" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="STHeiti" size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="375.0" styleClass="global">
+                           <children>
+                              <VBox id="customFilterVBox" prefHeight="536.0" prefWidth="278.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Advanced Filters" wrappingWidth="195.47936248779297">
+                                       <font>
+                                          <Font name="STHeiti" size="23.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                      </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0">
+               <children>
+                  <TableView id="tab" layoutX="236.0" layoutY="259.0" prefHeight="718.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</StackPane>
