@@ -20,7 +20,6 @@ public class FilterTestView implements FilterView {
 		VBox box = (VBox)Main.scene.lookup("#customFilterVBox");
 		Label label = new Label("Identifiant");
 		field = new TextField();
-		label.setStyle("-fx-text-fill: #FFFFFF;");
 		box.getChildren().add(label);
 		box.getChildren().add(field);
 

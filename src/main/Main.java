@@ -21,37 +21,14 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			StackPane page = (StackPane) FXMLLoader.load(Main.class.getResource("tableView.fxml"));
+		    FXMLLoader fxmlLoader = new FXMLLoader();
+			StackPane page = (StackPane) fxmlLoader.load(Main.class.getResourceAsStream("tableView.fxml"));
 			scene = new Scene(page);
-			scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			primaryStage.setMaximized(true);
-			
-			TableView<TableItem> tab = (TableView<TableItem>)scene.lookup("#tab");
-			TableController controller = new TableController(tab);
-			String[] tableTitles = {"index","name","id","relations"};	
-			controller.setTableTitle(tableTitles);
-			controller.initialize((Collection<TableItem>) DataLayerImpl.getInstance().getData());
-			
-			Button btnLaunchFilters = (Button)scene.lookup("#btnLaunchFilters");
-			btnLaunchFilters.setOnAction(new EventHandler<ActionEvent>(){
-				public void handle(ActionEvent event) {
-					System.out.println("click");
-					tab.getItems().clear();
-					try {
-						tab.setItems((ObservableList<TableItem>) DataLayerImpl.getInstance().getData());
-					} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException
-							| SecurityException e) {
-						e.printStackTrace();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-				
-			});
-			
+			System.out.println(fxmlLoader.getController().toString());
+			((TableController)fxmlLoader.getController()).buildTable();
 			
 		} catch(Exception e) {
 			e.printStackTrace();
